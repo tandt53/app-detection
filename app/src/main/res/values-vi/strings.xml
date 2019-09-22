@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">App Detection</string>
+    <string name="action_about">Settings</string>
+
+    <string name="app_detection">App Detection</string>
+    <string name="app_detection_description">Kiểm tra độ tin cậy các ứng dụng</string>
+    <string name="installed_apps">Các ứng dụng đã cài:</string>
+
+    <!--card strings-->
+    <string name="uninstall">GỠ BỎ</string>
+    <string name="get_apk">FILE APK</string>
+    <string name="install">Cài đặt: </string>
+    <string name="updated">Cập nhật: </string>
+
+    <!--get apk strings-->
+    <string name="preparing">Đang lưu...</string>
+    <string name="saving_apk">Đang lưu...</string>
+    <string name="saving_complete">Đang lưu 100%</string>
+    <string name="saving_toast">Apk đã được lưu trong thư mục sdcard/Extract.</string>
+
+    <!--Warning file exist strings-->
+    <string name="file_exist">File đã tồn tại!</string>
+    <string name="file_exist_msg">Bạn có muốn xóa file để tạo file mới không?</string>
+    <string name="file_exist_no">Không</string>
+    <string name="file_exist_yes">Có</string>
+
+    <!--dialog warning-->
+    <string name="warning_title">Cảnh báo!</string>
+    <string name="warning_msg_1st_part">Điện thoại của bạn vừa cài đặt ứng dụng "</string>
+    <string name="warning_msg_2nd_part">" không phải từ nguồn tin cậy. \nChọn chi tiết để biết thêm thông tin.\n\nNếu bạn đã biết, xin bỏ qua thông báo này.</string>
+    <string name="detail">Chi tiết</string>
+    <string name="skip">Bỏ qua</string>
+
+    <!--store-->
+    <string name="store_google">Google Play</string>
+    <string name="store_amazon">Amazon</string>
+    <string name="store_samsung">Samsung Apps</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <!--about activity-->
+    <string name="send_submit">Hãy gửi ý kiến đóng góp cho chúng tôi về ứng dụng App Detection.</string>
+    <string name="app_description">App Detection là sẽ tự nhận sự kiện bất kì một ứng dụng nào được cài đặt vào điện thoại của bạn.
+        Sau đó kiểm tra ứng dụng đó có được cài đặt từ một kho ứng dụng tin cậy hay ko.
+        \n\nDanh sách các kho ứng dụng tin cậy:
+        \n- Google Play
+        \n- Amazone
+        \n- Samsung Apps
+        \nDanh sách kho ứng dụng sẽ được cập nhật về sau.
+    </string>
+
+    <string name="sort_last_update">LAST UPDATED TIME</string>
+    <string name="sort_app_label">APP NAME</string>
+    <string name="sort_store">STORE NAME</string>
+
+    <string name="ad_unit_main">ca-app-pub-5706416316485450/8713637122</string>
+    <string name="action_sort">Sort</string>
+
+</resources>

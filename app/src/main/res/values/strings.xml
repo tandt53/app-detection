@@ -1,0 +1,58 @@
+<resources>
+    <string name="app_name">App Detection</string>
+    <string name="action_about">About</string>
+
+    <string name="app_detection">App Detection</string>
+    <string name="app_detection_description">Detect installed app from trusted source or not</string>
+    <string name="installed_apps">Installed applications:</string>
+
+    <!--card strings-->
+    <string name="uninstall">UNINSTALL</string>
+    <string name="get_apk">GET APK</string>
+    <string name="install">Installed: </string>
+    <string name="updated">Updated: </string>
+
+    <!--get apk strings-->
+    <string name="preparing">Preparing</string>
+    <string name="saving_apk">Saving...</string>
+    <string name="saving_complete">Saving 100%</string>
+    <string name="saving_toast">Apk saved in sdcard/Extract directory.</string>
+
+
+    <!--Warning file exist strings-->
+    <string name="file_exist">File exist!</string>
+    <string name="file_exist_msg">Are you sure to overwrite this file?</string>
+    <string name="file_exist_no">No</string>
+    <string name="file_exist_yes">Yes</string>
+
+    <!--dialog warning-->
+    <string name="warning_title">Warning!</string>
+    <string name="warning_msg_1st_part">Your mobile just installed "</string>
+    <string name="warning_msg_2nd_part">" app that is not from trusted store. \nClick detail for more information.\n\nIf you know already, please skip this warning.</string>
+    <string name="detail">Detail</string>
+    <string name="skip">Skip</string>
+
+    <!--store-->
+    <string name="store_google">Google Play</string>
+    <string name="store_amazon">Amazon</string>
+    <string name="store_samsung">Samsung Apps</string>
+    <string name="title_activity_about">AboutActivity</string>
+
+    <!--about activity-->
+    <string name="send_submit">Please comment or send the trusted store to us.</string>
+    <string name="app_description">App Detection is an application that detect new installed application.
+        Then automatically check whether it is from trusted store or not.
+        \n\nTrust stores are now:
+        \n- Google Play
+        \n- Amazone
+        \n- Samsung Apps
+        \nThe list of store will be updated later.
+    </string>
+
+    <string name="sort_last_update">LAST UPDATED TIME (MOST RECENTLY)</string>
+    <string name="sort_app_label">APP NAME (A - Z)</string>
+    <string name="sort_store">STORE NAME (UNKNOWN FIRST)</string>
+
+    <string name="ad_unit_main">ca-app-pub-5706416316485450/8713637122</string>
+    <string name="action_sort">Sort</string>
+</resources>
