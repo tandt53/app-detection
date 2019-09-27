@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="#FAFAFA"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="newappinstalldetection01.android.sim.com.newappinstalldetection01.MainActivity"
+    tools:context=".MainActivity"
     tools:showIn="@layout/activity_main">
 
     <RelativeLayout
@@ -59,20 +59,21 @@
         android:background="#BDBDBD" />
 
 
-    <com.google.android.gms.ads.AdView
-        android:id="@+id/adView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        ads:adSize="BANNER"
-        ads:adUnitId="@string/ad_unit_main"></com.google.android.gms.ads.AdView>
+<!--    <com.google.android.gms.ads.AdView-->
+<!--        android:id="@+id/adView"-->
+<!--        android:layout_width="wrap_content"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_alignParentBottom="true"-->
+<!--        android:layout_centerHorizontal="true"-->
+<!--        ads:adSize="BANNER"-->
+<!--        ads:adUnitId="@string/ad_unit_main"></com.google.android.gms.ads.AdView>-->
 
+
+<!--    android:layout_above="@id/adView"-->
     <RelativeLayout
         android:id="@+id/layoutApps"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/adView"
         android:layout_below="@id/divider"
         android:layout_marginTop="4dp"
         android:paddingLeft="8dp"

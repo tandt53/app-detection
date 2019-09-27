@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 
 android {
-    compileSdkVersion 26
+    compileSdkVersion 24
     buildToolsVersion '25.0.0'
 
     lintOptions {
@@ -15,9 +15,9 @@ android {
     defaultConfig {
         applicationId "com.sim.android.appdetection"
         minSdkVersion 15
-        targetSdkVersion 28
-        versionCode 15
-        versionName "1.1.52"
+        targetSdkVersion 24
+        versionCode 16
+        versionName "1.1.53"
     }
     buildTypes {
         release {

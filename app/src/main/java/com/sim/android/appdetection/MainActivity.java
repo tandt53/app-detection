@@ -65,10 +65,10 @@ public class MainActivity extends AppCompatActivity {
 //        registerReceiver(broadcastReceiver, new IntentFilter("broadCastName"));
 
         //ad unit
-        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.ad_unit_main));
-        AdView mAdView = (AdView) findViewById(R.id.adView);
-        AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+//        MobileAds.initialize(getApplicationContext(), getResources().getString(R.string.ad_unit_main));
+//        AdView mAdView = (AdView) findViewById(R.id.adView);
+//        AdRequest adRequest = new AdRequest.Builder().build();
+//        mAdView.loadAd(adRequest);
 
         Intent i = getIntent();
         Bundle bundle = i.getExtras();
