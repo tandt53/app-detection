@@ -1,13 +1,11 @@
 package com.sim.android.appdetection;
 
-import android.support.v7.widget.CardView;
-import android.support.v7.widget.RecyclerView;
+import androidx.cardview.widget.CardView;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import org.w3c.dom.Text;
 
 /**
  * Created by ADMIN on 8/16/2016.
@@ -26,15 +24,15 @@ public class AppViewHolder extends RecyclerView.ViewHolder {
 
     public AppViewHolder(View itemView) {
         super(itemView);
-        cv = (CardView) itemView.findViewById(R.id.cardView);
-        appName = (TextView) itemView.findViewById(R.id.txtAppName);
-        installDate = (TextView) itemView.findViewById(R.id.txtInstallDate);
-        updateDate = (TextView) itemView.findViewById(R.id.txtUpdatedDate);
-        imgAppIcon = (ImageView) itemView.findViewById(R.id.imgAppIcon);
-        txtStore = (TextView) itemView.findViewById(R.id.store);
+        cv = itemView.findViewById(R.id.cardView);
+        appName = itemView.findViewById(R.id.txtAppName);
+        installDate = itemView.findViewById(R.id.txtInstallDate);
+        updateDate = itemView.findViewById(R.id.txtUpdatedDate);
+        imgAppIcon = itemView.findViewById(R.id.imgAppIcon);
+        txtStore = itemView.findViewById(R.id.store);
 
-        btnGetApk = (TextView) itemView.findViewById(R.id.btnGetApk);
-        btnUninstall = (TextView) itemView.findViewById(R.id.btnUninstall);
+        btnGetApk = itemView.findViewById(R.id.btnGetApk);
+        btnUninstall = itemView.findViewById(R.id.btnUninstall);
 
     }
 }

@@ -3,20 +3,21 @@
     <string name="action_about">About</string>
 
     <string name="app_detection">App Detection</string>
-    <string name="app_detection_description">Detect installed app from trusted source or not</string>
+    <string name="app_detection_description">Detect installed app from NOT trusted source</string>
     <string name="installed_apps">Installed applications:</string>
 
     <!--card strings-->
-    <string name="uninstall">UNINSTALL</string>
-    <string name="get_apk">GET APK</string>
-    <string name="install">Installed: </string>
-    <string name="updated">Updated: </string>
+    <string name="uninstall">Uninstall</string>
+    <string name="app_detail">Details</string>
+    <string name="get_apk">Get APK</string>
+    <string name="install">Installed on </string>
+    <string name="updated">Updated on </string>
 
     <!--get apk strings-->
     <string name="preparing">Preparing</string>
     <string name="saving_apk">Saving...</string>
     <string name="saving_complete">Saving 100%</string>
-    <string name="saving_toast">Apk saved in sdcard/Extract directory.</string>
+    <string name="saving_toast">Apk is saved in sdcard/Extract directory.</string>
 
 
     <!--Warning file exist strings-->

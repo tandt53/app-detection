@@ -7,8 +7,9 @@
     <string name="installed_apps">Các ứng dụng đã cài:</string>
 
     <!--card strings-->
-    <string name="uninstall">GỠ BỎ</string>
-    <string name="get_apk">FILE APK</string>
+    <string name="uninstall">Gỡ bỏ</string>
+    <string name="app_detail">Chi tiết</string>
+    <string name="get_apk">File APK</string>
     <string name="install">Cài đặt: </string>
     <string name="updated">Cập nhật: </string>
 
@@ -16,7 +17,7 @@
     <string name="preparing">Đang lưu...</string>
     <string name="saving_apk">Đang lưu...</string>
     <string name="saving_complete">Đang lưu 100%</string>
-    <string name="saving_toast">Apk đã được lưu trong thư mục sdcard/Extract.</string>
+    <string name="saving_toast">File APK đã được lưu trong thư mục sdcard/Extract.</string>
 
     <!--Warning file exist strings-->
     <string name="file_exist">File đã tồn tại!</string>

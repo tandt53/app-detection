@@ -1,14 +1,18 @@
 package com.sim.android.appdetection;
 
 import android.app.ProgressDialog;
+import android.content.ComponentName;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.RecyclerView;
+
+import androidx.appcompat.app.AlertDialog;
+import androidx.recyclerview.widget.RecyclerView;
+
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -25,7 +29,6 @@ import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 /**
  * Created by ADMIN on 8/16/2016.
@@ -65,10 +68,14 @@ public class ListAppViewAdapter extends RecyclerView.Adapter<AppViewHolder> {
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                intent.setData(Uri.parse("package:" + app.packageName));
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
+//                ComponentName cName = new ComponentName("packageName", app.packageName);
+//
+//                Intent intent = new Intent("android.intent.action.MAIN");
+//                intent.setComponent(cName);
+//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//                context.startActivity(intent);
+
+                context.startActivity(context.getPackageManager().getLaunchIntentForPackage(app.packageName));
             }
         });
 
@@ -76,8 +83,21 @@ public class ListAppViewAdapter extends RecyclerView.Adapter<AppViewHolder> {
             @Override
             public void onClick(View v) {
                 Uri packageURI = Uri.parse("package:" + app.packageName);
-                Intent uninstallIntent = new Intent(Intent.ACTION_DELETE, packageURI);
-                context.startActivity(uninstallIntent);
+//                Intent uninstallIntent = new Intent(Intent.ACTION_DELETE, packageURI);
+//                context.startActivity(uninstallIntent);
+
+//                Intent intent = null;
+//                intent = new Intent(Intent.ACTION_DELETE);
+//
+//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
+//                intent.setData(packageURI);
+//                context.startActivity(intent);
+//                Log.d(Constants.LOG_MAIN_TAG, "Come here");
+
+                Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                intent.setData(Uri.parse("package:" + app.packageName));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                context.startActivity(intent);
 
             }
         });
@@ -145,8 +165,7 @@ public class ListAppViewAdapter extends RecyclerView.Adapter<AppViewHolder> {
         }
     }
 
-    // Params are input and output files, progress in Long size of
-// data transferred, Result is Boolean success.
+    // Params are input and output files, progress in Long size of data transferred, Result is Boolean success.
     public class MyTask extends AsyncTask<String, Long, Boolean> {
         ProgressDialog progress;
 
@@ -190,7 +209,7 @@ public class ListAppViewAdapter extends RecyclerView.Adapter<AppViewHolder> {
                 // write the output file (You have now copied the file)
                 out.flush();
                 out.close();
-                out = null;
+//                out = null;
 
             } catch (FileNotFoundException fnfe1) {
                 Log.d(Constants.LOG_MAIN_TAG, fnfe1.getMessage());

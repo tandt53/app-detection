@@ -15,13 +15,16 @@ import java.util.Comparator;
  * Created by ADMIN on 8/9/2016.
  */
 public class InstallReceiver extends BroadcastReceiver {
-    public MainActivity activity;
+//    public MainActivity activity;
 
     public InstallReceiver() {
     }
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        if(intent.getAction()!=null){
+
+        }
         switch (intent.getAction()) {
             case Intent.ACTION_PACKAGE_ADDED:
                 try {
@@ -29,12 +32,14 @@ public class InstallReceiver extends BroadcastReceiver {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-                SharedPreferences preferences = context.getSharedPreferences(Util.KEY_APP_ACTION, Context.MODE_PRIVATE);
-                if (preferences.getBoolean(Util.KEY_SWITCH_STATUS, false)) {
+
+                Log.d(Constants.LOG_MAIN_TAG, "Got new app installed");
+                SharedPreferences preferences = context.getSharedPreferences(Constants.KEY_APP_ACTION, Context.MODE_PRIVATE);
+                if (preferences.getBoolean(Constants.KEY_SWITCH_STATUS, false)) {
                     if (checkInstalledApp(context)) {
                         SharedPreferences.Editor editor = preferences.edit();
-                        editor.putString(Util.KEY_APP_ACTION, Intent.ACTION_PACKAGE_ADDED);
-                        editor.commit();
+                        editor.putString(Constants.KEY_APP_ACTION, Intent.ACTION_PACKAGE_ADDED);
+                        editor.apply();
                         sendBroadcast(context, Intent.ACTION_PACKAGE_ADDED);
                     }
                 }
@@ -45,6 +50,7 @@ public class InstallReceiver extends BroadcastReceiver {
                 updateSharePreference(context, Intent.ACTION_PACKAGE_REMOVED);
                 break;
             case Intent.ACTION_PACKAGE_REPLACED:
+                toast(context, "new app replaced");
                 break;
         }
     }
@@ -58,14 +64,14 @@ public class InstallReceiver extends BroadcastReceiver {
     }
 
     private void updateSharePreference(Context context, String action) {
-        SharedPreferences preferences = context.getSharedPreferences(Util.KEY_APP_ACTION, Context.MODE_PRIVATE);
+        SharedPreferences preferences = context.getSharedPreferences(Constants.KEY_APP_ACTION, Context.MODE_PRIVATE);
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString(Util.KEY_APP_ACTION, action);
-        editor.commit();
+        editor.putString(Constants.KEY_APP_ACTION, action);
+        editor.apply();
     }
 
     private boolean checkInstalledApp(Context context) {
-        ArrayList<InstalledApp> listapps = Util.getListApp(context, Util.SORT_TYPE_LAST_UPDATED, true);
+        ArrayList<InstalledApp> listapps = Util.getListApp(context, Constants.SORT_TYPE_LAST_UPDATED, true);
 
         Collections.sort(listapps, new Comparator<InstalledApp>() {
             public int compare(InstalledApp emp1, InstalledApp emp2) {

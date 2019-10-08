@@ -13,7 +13,7 @@
     <RelativeLayout
         android:id="@+id/layoutButtons"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="48dp"
         android:gravity="center_vertical">
 
         <LinearLayout
@@ -23,14 +23,14 @@
             android:gravity="center_vertical"
             android:orientation="vertical">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:gravity="center_vertical"
-                android:paddingLeft="8dp"
-                android:text="@string/app_detection"
-                android:textColor="#424242"
-                android:textSize="16sp" />
+<!--            <TextView-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:gravity="center_vertical"-->
+<!--                android:paddingLeft="8dp"-->
+<!--                android:text="@string/app_detection"-->
+<!--                android:textColor="#424242"-->
+<!--                android:textSize="16sp" />-->
 
             <TextView
                 android:layout_width="wrap_content"
@@ -38,8 +38,8 @@
                 android:gravity="center_vertical"
                 android:paddingLeft="8dp"
                 android:text="@string/app_detection_description"
-                android:textColor="#7f8c8d"
-                android:textSize="12.5sp" />
+                android:textColor="#424242"
+                android:textSize="14sp" />
         </LinearLayout>
 
         <Switch
@@ -59,14 +59,14 @@
         android:background="#BDBDBD" />
 
 
-<!--    <com.google.android.gms.ads.AdView-->
-<!--        android:id="@+id/adView"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_alignParentBottom="true"-->
-<!--        android:layout_centerHorizontal="true"-->
-<!--        ads:adSize="BANNER"-->
-<!--        ads:adUnitId="@string/ad_unit_main"></com.google.android.gms.ads.AdView>-->
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        ads:adSize="BANNER"
+        ads:adUnitId="@string/ad_unit_main"></com.google.android.gms.ads.AdView>
 
 <!--    android:layout_above="@id/adView"-->
     <RelativeLayout
@@ -74,6 +74,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@id/divider"
+        android:layout_above="@id/adView"
         android:layout_marginTop="4dp"
         android:paddingLeft="8dp"
         android:paddingRight="8dp">
@@ -88,14 +89,14 @@
             android:textColor="#7f8c8d"
             android:textSize="13sp" />
 
-        <android.support.v7.widget.RecyclerView
+        <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recycleView"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_below="@id/txtTopText"
             android:layout_marginTop="6dp"
             android:paddingLeft="4dp"
-            android:paddingRight="4dp"></android.support.v7.widget.RecyclerView>
+            android:paddingRight="4dp"></androidx.recyclerview.widget.RecyclerView>
 
 
     </RelativeLayout>

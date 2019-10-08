@@ -18,18 +18,8 @@ import java.util.List;
  */
 public class Util {
 
-    public static String KEY_APP_ACTION = "App Action";
-    public static String DEFAULT_APP_ACTION = "Default message";
-
-    public static String KEY_SWITCH_STATUS = "REGISTERED";
-    public static int SORT_TYPE_LAST_UPDATED = 0;
-    public static int SORT_TYPE_APP_LABEL = 1;
-    public static int SORT_TYPE_APP_STORE = 2;
-    public static String KEY_SORT = "SORT_TYPE";
-    public static int DEFAULT_SORT = 0;
-
     public static ArrayList<InstalledApp> getListApp(Context context, int sortType, boolean isAllApp) {
-        ArrayList<InstalledApp> listInstalledApps = new ArrayList<>();
+        ArrayList<InstalledApp> listInstalledApps ;
         listInstalledApps = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
