@@ -68,36 +68,27 @@ public class ListAppViewAdapter extends RecyclerView.Adapter<AppViewHolder> {
         holder.cv.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                ComponentName cName = new ComponentName("packageName", app.packageName);
-//
-//                Intent intent = new Intent("android.intent.action.MAIN");
-//                intent.setComponent(cName);
-//                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-//                context.startActivity(intent);
-
-                context.startActivity(context.getPackageManager().getLaunchIntentForPackage(app.packageName));
+                try {
+                    context.startActivity(context.getPackageManager().getLaunchIntentForPackage(app.packageName));
+                } catch (NullPointerException e){
+                    Toast.makeText(context, "The application might not provide UI. Please click DETAILS button to see application information.", Toast.LENGTH_LONG).show();
+                }
             }
         });
 
         holder.btnUninstall.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Uri packageURI = Uri.parse("package:" + app.packageName);
-//                Intent uninstallIntent = new Intent(Intent.ACTION_DELETE, packageURI);
-//                context.startActivity(uninstallIntent);
 
-//                Intent intent = null;
-//                intent = new Intent(Intent.ACTION_DELETE);
-//
-//                intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);
-//                intent.setData(packageURI);
-//                context.startActivity(intent);
-//                Log.d(Constants.LOG_MAIN_TAG, "Come here");
+                try {
+                    Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
+                    intent.setData(Uri.parse("package:" + app.packageName));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(intent);
+                } catch(NullPointerException e){
+                    Toast.makeText(context, "Unable to view detail application information in Settings.", Toast.LENGTH_LONG).show();
+                }
 
-                Intent intent = new Intent(android.provider.Settings.ACTION_APPLICATION_DETAILS_SETTINGS);
-                intent.setData(Uri.parse("package:" + app.packageName));
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                context.startActivity(intent);
 
             }
         });
