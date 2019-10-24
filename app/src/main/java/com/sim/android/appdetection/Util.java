@@ -19,7 +19,7 @@ import java.util.List;
 public class Util {
 
     public static ArrayList<InstalledApp> getListApp(Context context, int sortType, boolean isAllApp) {
-        ArrayList<InstalledApp> listInstalledApps ;
+        ArrayList<InstalledApp> listInstalledApps;
         listInstalledApps = new ArrayList<>();
         PackageManager pm = context.getPackageManager();
         List<ApplicationInfo> packages = pm.getInstalledApplications(PackageManager.GET_META_DATA);
@@ -79,13 +79,19 @@ public class Util {
 
     public static String getStore(String installerPackageName) {
         if (installerPackageName != null) {
-            if (installerPackageName.equals("com.android.vending"))
-                return "Google Play";
-            else if (installerPackageName.equals("com.amazon.venezia"))
-                return "Amazon";
-            else if (installerPackageName.equals("com.sec.android.app.samsungapps"))
-                return "Samsung Apps";
-            else return installerPackageName;
+            switch (installerPackageName) {
+                case "com.android.vending":
+                    return "Google Play";
+                case "com.amazon.venezia":
+                    return "Amazon";
+                case "com.sec.android.app.samsungapps":
+                case "com.samsung.android.app.omcagent":
+                    return "Samsung";
+                case "com.facebook.system":
+                    return "Facebook";
+                default:
+                    return installerPackageName;
+            }
         }
         return "Unknown";
     }
