@@ -81,10 +81,11 @@ public class Util {
         if (installerPackageName != null) {
             if (installerPackageName.equals("com.android.vending"))
                 return "Google Play";
-            if (installerPackageName.equals("com.amazon.venezia"))
+            else if (installerPackageName.equals("com.amazon.venezia"))
                 return "Amazon";
-            if (installerPackageName.equals("com.sec.android.app.samsungapps"))
+            else if (installerPackageName.equals("com.sec.android.app.samsungapps"))
                 return "Samsung Apps";
+            else return installerPackageName;
         }
         return "Unknown";
     }
